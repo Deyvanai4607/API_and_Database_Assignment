@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>Metro boking</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="text/JavaScript" src="index.js"></script>
+
+</head>
+
+<body>
+    <div id="homePage">
+        <h2>Home</h2>
+        <button type="button" onclick="newUserPage()">New User</button>
+        <button type="button" onclick="existingUserPage()">Existing User</button>
+    </div>
+
+    <div id="newUserPage">
+
+        <h3>Sign Up Page</h3>
+        <label> User Name : </label><br><br>
+        <input type="text" id="username" onkeyup="checkUserName('username')"><br>
+        <label id="usernameMessage"></label> <br><br>
+
+        <label>Phone Number</label><br><br>
+        <input type="number" id="phone" onkeyup="checkPhone('phone')"><br>
+        <label id="phoneMessage"></label> <br><br>
+
+        <label> Balance : </label><br><br>
+        <input type="number" id="balance" onkeyup="checkBalace('balance')"><br>
+        <label id="balanceMessage"></label> <br><br>
+
+        <label> Card Number : </label><br><br>
+        <input type="number" id="cardnumber" ><br>
+        <!-- <label id="balanceMessage"></label> <br><br> -->
+
+
+        <button onclick="signUp()">Sign Up</button>
+    </div>
+    <div id="existingUserPage">
+
+        <h3>Sign In Page</h3>
+        <label>User ID</label>
+        <input type="text" id="existingUserId">
+        <button type="button" onclick="signIn()">Sign In</button><br>
+        <label id="availableUser"></label>
+
+    </div>
+
+    <div id="menupage">
+
+        <button class="medicinebtn-class1" onclick="BalanceCheck()">Balance Check</button>
+        <button class="medicinebtn-class" onclick="Recharge()">Rechange</button>
+        <button class="medicinebtn-class" onclick="TravelHistory()">View Travel History </button>
+        <button class="medicinebtn-class" onclick="Travel()">Travel </button>
+        <button class="medicinebtn-class" onclick="Exit()">Exit </button>
+
+    </div>
+    <h2 id="greet">Welcome</h2>
+
+    <div id="ShowBalance">
+        <h4>Your Current Balance is : <span id="cbalance"></span></h4>
+    </div>
+
+    <div id="topupDiv">
+        <label>Current Balance :</label><span id="currentAmount"></span><br><br>
+        <label>Enter amount : </label>
+        <input type="number" name="inpuTtopup" id="inpuTtopup"><br><br>
+        <input type="button" name="totalBalance" id="totalBalance" value="Recharge" onclick="TopUp()">
+        <div id="afterTopupDiv">
+            <p>Recharge Successfully done...</p>
+            <p>Your Current Balance is : <span id="afterTopup"></span></p>
+        </div>
+    </div>
+
+    <div id="travelHistory">
+        <table id="historyDisplay">
+
+            <thead>
+                <tr>
+                    <th>TravelID</th>
+                    <th>CardNumber</th>
+                    <th>FromLocation</th>
+                    <th>ToLocation</th>
+                    <th>Date</th>
+                    <th>TravelCost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="travel">
+        <table id="travelDisplay">
+
+            <thead>
+                <tr>
+                    <th>TicketID</th>
+                    <th>FromLocation</th>
+                    <th>ToLocation</th>
+                    <th>Fair</th>
+                    <th>Book</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
