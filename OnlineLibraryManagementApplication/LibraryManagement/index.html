@@ -1,0 +1,146 @@
+<html>
+
+<head>
+    <title>Library Management</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+
+<body>
+    <div id="homePage">
+        <h2>Home</h2>
+        <button type="button" onclick="newUserPage()">New User</button>
+        <button type="button" onclick="existingUserPage()">Existing User</button>
+
+    </div>
+
+    <div id="newUserPage">
+
+        <h3>Sign Up Page</h3>
+        <label> User Name : </label><br><br>
+        <input type="text" id="userName"><br>
+        <label id="userNameMessage"></label> <br><br>
+
+        <label> Gender : </label><br><br>
+        <input type="text " id="gender"><br>
+        <label id="genderMessage"></label><br><br>
+
+        <label> Department : </label><br><br>
+        <input type=" text  " id="department"><br>
+        <label id="departmentMessage"></label><br><br>
+
+        <label>Phone Number</label><br><br>
+        <input type="text" id="phone"><br>
+        <label id="phoneMessage"></label> <br><br>
+
+        <label> Email : </label><br><br>
+        <input type="text" id="email" onkeyup="checkEmail('email')"><br>
+        <label id="emailMessage"></label> <br><br>
+
+        <label> Wallet Balance : </label><br><br>
+        <input type="number" id="walletBalance"><br>
+        <label id="walletBalanceMessage"></label> <br><br>
+
+        <button onclick="signUp()">Sign Up</button>
+    </div>
+
+    <div id="existingUserPage">
+
+        <h3>Sign In Page</h3>
+        <label>User Email</label>
+        <input type="text" id="existingUserEmail">
+        <button type="button" onclick="signIn()">Sign In</button><br>
+        <label id="availableUser"></label>
+
+    </div>
+
+    <div id="menupage">
+
+        <button class="medicinebtn-class1" onclick="Borrowbook()">Borrow book</button>
+        <button class="medicinebtn-class" onclick="ShowBorrowedhistory()">Show Borrowed history</button>
+        <button class="medicinebtn-class" onclick="ReturnBooks()">Return Books</button>
+        <button class="medicinebtn-class" onclick="WalletRecharge()">Wallet Recharge </button>
+        <button class="medicinebtn-class" onclick="Exit()">Exit</button>
+
+    </div>
+
+    <h2 id="greet">Welcome</h2>
+
+    <div id="borrowBook">
+        <table id="bookDisplay">
+
+            <thead>
+                <tr>
+                    <th> BookName</th>
+                    <th> AuthorName</th>
+                    <th> BookCount</th>
+                    <th>Buy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data will be inserted here -->
+            </tbody>
+        </table>
+       
+
+    </div>
+    <div id="bookCountDiv">
+        <label for="">Enter the count of the book :</label>
+        <input type="number" id="bookCount">
+        <button id="checkCount" onclick="BuyBookWithCount()">Check</button>
+    </div>
+
+    <div id="borrowedhistory">
+        <a><button id="exportID" onclick="ExportData()">Export</button></a>
+        <table id="borrowDisplay">
+
+            <thead id="borrowDisplay1">
+                <tr>
+                    <th> BookID </th>
+                    <th> UserID</th>
+                    <th> Borrowed Date </th>
+                    <th> Borrow Book Count </th>
+                    <th> Status </th>
+                    <th> Paid Fine Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="returnBorrowedhistory">
+        <table id="returnBorrowDisplay">
+
+            <thead>
+                <tr>
+                    <th> BookID </th>
+                    <th> UserID</th>
+                    <th> Borrowed Date </th>
+                    <th> Borrow Book Count </th>
+                    <th> Status </th>
+                    <th> Paid Fine Amount</th>
+                    <th>Return</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data will be inserted here -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="walletRecharge">
+        <label>Current Balance :</label><span id="currentAmount"></span><br><br>
+        <label>Enter amount : </label>
+        <input type="number" name="inpuTtopup" id="inpuTtopup"><br><br>
+        <input type="button" name="totalBalance" id="totalBalance" value="Recharge" onclick="TopUp()">
+        <div id="afterTopupDiv">
+            <p>Recharge Successfully done...</p>
+            <p>Your Current Balance is : <span id="afterTopup"></span></p>
+        </div>
+    </div>
+
+</body>
+
+</html>
